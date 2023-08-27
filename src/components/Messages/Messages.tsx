@@ -5,20 +5,21 @@ import './Messages.scss';
 
 const Messages: React.FC = () => {
   const messages = useSelector((state: RootState) => state.timer.messages);
-  const messagesEndRef = useRef<null | HTMLDivElement>(null);
+  const containerRef = useRef<null | HTMLDivElement>(null);
 
   useEffect(() => {
-    if (messagesEndRef.current) {
-      messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+    if (containerRef.current) {
+      Array.from(containerRef.current.children)
+        .at(-1)
+        ?.scrollIntoView({ behavior: 'smooth' });
     }
   }, [messages]);
 
   return (
-    <div className="messages-container">
+    <div ref={containerRef} className="messages__container">
       {messages.map((message, index) => (
         <p key={index}>{message}</p>
       ))}
-      <div ref={messagesEndRef}></div>
     </div>
   );
 };

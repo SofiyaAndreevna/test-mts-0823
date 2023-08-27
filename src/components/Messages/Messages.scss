@@ -3,32 +3,30 @@ $scrollbar-track-color: #f1f1f1;
 $scrollbar-thumb-color: #888;
 $scrollbar-thumb-hover-color: #555;
 
-.messages {
-  &-container {
-    border: 1px solid #f1f1f1;
+.messages__container {
+  border: 1px solid #f1f1f1;
+  border-radius: 5px;
+  padding: 1rem;
+  overflow: auto;
+  height: 200px;
+  width: 550px;
+  background-color: #f1f1f1;
+  color: #555;
+
+  &::-webkit-scrollbar {
+    width: $scrollbar-width;
+  }
+  &::-webkit-scrollbar-track {
+    background: $scrollbar-track-color;
     border-radius: 5px;
-    padding: 1rem;
-    overflow: auto;
-    height: 200px;
-    width: 550px;
-    background-color: #f1f1f1;
-    color: #555;
+  }
 
-    &::-webkit-scrollbar {
-      width: $scrollbar-width;
-    }
-    &::-webkit-scrollbar-track {
-      background: $scrollbar-track-color;
-      border-radius: 5px;
-    }
+  &::-webkit-scrollbar-thumb {
+    background: $scrollbar-thumb-color;
+    border-radius: 5px;
 
-    &::-webkit-scrollbar-thumb {
-      background: $scrollbar-thumb-color;
-      border-radius: 5px;
-
-      &:hover {
-        background: $scrollbar-thumb-hover-color;
-      }
+    &:hover {
+      background: $scrollbar-thumb-hover-color;
     }
   }
 }
