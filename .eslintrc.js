@@ -9,7 +9,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    node: true, // добавьте эту строку
+    node: true,
   },
   parserOptions: {
     ecmaVersion: 2020,
