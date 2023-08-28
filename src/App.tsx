@@ -4,15 +4,17 @@ import Timer from './components/Timer/Timer';
 import Messages from './components/Messages/Messages';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
-import './App.scss';
+import { AppContainer } from './App.styles';
 
 function App() {
   return (
     <Provider store={store}>
-      <div className="App container mt-5">
+      <AppContainer>
+        {/* <div className="App container mt-5"> */}
         <Timer />
         <Messages />
-      </div>
+        {/* </div> */}
+      </AppContainer>
     </Provider>
   );
 }
