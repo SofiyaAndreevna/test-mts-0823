@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
-import './Messages.scss';
+import { StyledMessagesContainer } from './Messages.styles';
 
 const Messages: React.FC = () => {
   const messages = useSelector((state: RootState) => state.timer.messages);
@@ -16,11 +16,11 @@ const Messages: React.FC = () => {
   }, [messages]);
 
   return (
-    <div ref={containerRef} className="messages__container">
+    <StyledMessagesContainer ref={containerRef}>
       {messages.map((message, index) => (
         <p key={index}>{message}</p>
       ))}
-    </div>
+    </StyledMessagesContainer>
   );
 };
 
